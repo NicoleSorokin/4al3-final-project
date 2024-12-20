@@ -100,7 +100,8 @@ def preprocessing(percentage, kfold, corr_threshold=0.1, model='svm'):
     return X_balanced, y_balanced
 
 # loading training data + pre-processing
-X_train, X_test, y_train, y_test = preprocessing(0.001, False, corr_threshold=0.1, model='nn')
+# for neural network do 0.1 for first parameter (10% data) and 0.05 for second parameter (5% data)
+X_train, X_test, y_train, y_test = preprocessing(0.1, False, corr_threshold=0.1, model='nn')
 
 # training model
 ##############################
@@ -479,5 +480,5 @@ def train_svm_model():
         pickle.dump(best_model, f)
 
 # COMMENT THIS OUT WHEN YOU RUN OTHER MODELS
-train_svm_model()
+# train_svm_model()
 
